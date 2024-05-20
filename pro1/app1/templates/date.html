@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%for i in tree%}
+    <h4> 
+        <a href = "page/{{i.id}}"> {{i.name}} : {{i.rollNo}} - {{i.department}}</a> 
+        <a href=" {% url 'update' i.id %} "> <button> Update </button> </a>
+        <a href=" {% url 'delete' i.id %} "> <button> Delete </button> </a>
+    </h4> 
+    
+    {%endfor%}
+    <a href=" {% url 'forming' %} "> <button> Add </button> </a>
+</body>
+</html>
